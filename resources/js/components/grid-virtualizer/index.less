@@ -1,0 +1,86 @@
+/**
+ * This is the documentation comment for the .c-virtual-scroll class.
+ */
+.c-virtual-scroll {
+  @apply w-full;
+
+  &.virtualized {
+    thead {
+      @apply sticky top-0 -z-0;
+    }
+    tbody {
+      tr {
+        @apply absolute;
+      }
+    }
+  }
+
+  thead {
+    @apply grid;
+    tr {
+      @apply flex;
+
+      &:first-child th {
+        &:first-child {
+          @apply rounded-tl-lg;
+        }
+        &:last-child {
+          @apply rounded-tr-lg;
+        }
+      }
+
+      th {
+        @apply relative flex bg-base-200 p-2 text-sm;
+
+        > button {
+          @apply block truncate text-base-content;
+
+          svg.sort {
+            @apply absolute right-1 top-1/2 -translate-y-1/2 transform transition-all duration-150 ease-in-out;
+          }
+        }
+
+        .resizer {
+          @apply ~"w-0.5" absolute right-0 cursor-col-resize touch-none bg-base-300/40;
+          height: calc(100% - 0.6rem);
+          top: 0.3rem;
+
+          &.resizing {
+            @apply bg-base-content;
+          }
+        }
+        .filter {
+          @apply -mr-2 transition-all duration-150 ease-in-out;
+        }
+
+        &:hover .filter {
+          @apply opacity-100;
+        }
+      }
+    }
+  }
+  tbody {
+    @apply relative grid;
+
+    tr {
+      @apply flex;
+
+      &:nth-of-type(even) > td {
+        @apply bg-base-300/30;
+      }
+      td {
+        > div {
+          @apply absolute top-0 w-full truncate px-2 py-1 leading-normal text-base-content;
+          top: 50%;
+          transform: translateY(-50%);
+          span {
+            @apply truncate;
+          }
+        }
+        svg {
+          @apply transition-all duration-150 ease-in-out;
+        }
+      }
+    }
+  }
+}

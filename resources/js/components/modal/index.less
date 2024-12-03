@@ -1,0 +1,53 @@
+/**
+ * This is the documentation comment for the .ant-modal class.
+ */
+.ant-modal {
+  @apply max-w-full;
+  &-content {
+    @apply !rounded-xl !p-0;
+    .ant-modal-header {
+      @apply mb-0 rounded-t-xl bg-base-100 p-4 pb-2 pl-9;
+      .ant-modal-title > h3 {
+        @apply text-2xl text-base-content;
+      }
+    }
+    .ant-modal-body {
+      @apply ~'h-[calc(100vh-8rem)]' overflow-auto bg-base-100 p-6;
+
+      &::-webkit-scrollbar {
+        @apply ~'size-3';
+      }
+      &::-webkit-scrollbar-track {
+        @apply rounded-lg bg-base-200;
+      }
+      &::-webkit-scrollbar-thumb {
+        @apply rounded-lg border-2 border-solid border-base-200 bg-base-300;
+      }
+      &::-webkit-scrollbar-thumb:hover {
+        @apply bg-base-content/20;
+      }
+    }
+    .ant-modal-close {
+      @apply hover:bg-transparent;
+      svg {
+        @apply text-2xl text-base-content;
+      }
+    }
+    .ant-modal-footer {
+      @apply mt-0 bg-base-200 px-4 py-3;
+      div {
+        @apply justify-center;
+        button {
+          @apply h-11 w-32 justify-center rounded-xl border border-primary px-4 py-2;
+        }
+      }
+    }
+  }
+}
+.form {
+  .ant-modal-content {
+    .ant-modal-footer {
+      @apply border-t bg-white;
+    }
+  }
+}

@@ -1,0 +1,1702 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Swagger Laravel",
+        "description": "This is a sample Laravel server.  You can find out more about Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "email": "apiteam@swagger.io"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3000",
+            "description": "Localhost API Mocking"
+        }
+    ],
+    "paths": {
+        "/api/addresses": {
+            "get": {
+                "tags": [
+                    "Address"
+                ],
+                "summary": "Get all address",
+                "description": "This request is used to get all address when user use the App. This request is using MySql database.",
+                "operationId": "44d61d420fc04f57714f0e4a8243fe84",
+                "responses": {
+                    "200": {
+                        "description": "Address fetched",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Get List Success"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/Address"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Protected route need to include sign in token as authorization bearer",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Protected route need to include sign in token as authorization bearer"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/addresses/districts": {
+            "get": {
+                "tags": [
+                    "AddressDistrict"
+                ],
+                "summary": "Get all address district",
+                "description": "This request is used to get all address district when user use the App. This request is using MySql database.",
+                "operationId": "25ca2820bec0731171b738ea844095c6",
+                "responses": {
+                    "200": {
+                        "description": "Address district fetched",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Get List Success"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/AddressDistrict"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Protected route need to include sign in token as authorization bearer",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Protected route need to include sign in token as authorization bearer"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/addresses/provinces": {
+            "get": {
+                "tags": [
+                    "AddressProvince"
+                ],
+                "summary": "Get all address province",
+                "description": "This request is used to get all address province when user use the App. This request is using MySql database.",
+                "operationId": "9ba37ceb8b40e068667e45f1b854232f",
+                "responses": {
+                    "200": {
+                        "description": "Address province fetched",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Get List Success"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/AddressProvince"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Protected route need to include sign in token as authorization bearer",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Protected route need to include sign in token as authorization bearer"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/addresses/wards": {
+            "get": {
+                "tags": [
+                    "AddressWard"
+                ],
+                "summary": "Get all address ward",
+                "description": "This request is used to get all address ward when user use the App. This request is using MySql database.",
+                "operationId": "1ac99953dcbd32e88cc5c880e76f77c9",
+                "responses": {
+                    "200": {
+                        "description": "Address ward fetched",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Get List Success"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/AddressWard"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Protected route need to include sign in token as authorization bearer",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Protected route need to include sign in token as authorization bearer"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/codes": {
+            "get": {
+                "tags": [
+                    "Code"
+                ],
+                "summary": "Get all code",
+                "description": "This request is used to get all code when user use the App. This request is using MySql database.",
+                "operationId": "dc861120c85e7b67b3eb98c2470bd9b8",
+                "responses": {
+                    "200": {
+                        "description": "Code fetched",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Get List Success"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/Code"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Protected route need to include sign in token as authorization bearer",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Protected route need to include sign in token as authorization bearer"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/codes/types": {
+            "get": {
+                "tags": [
+                    "CodeType"
+                ],
+                "summary": "Get all code type",
+                "description": "This request is used to get all code type when user use the App. This request is using MySql database.",
+                "operationId": "a54eec6dc0f05e840cce482794144c5f",
+                "responses": {
+                    "200": {
+                        "description": "Code type fetched",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Get List Success"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/CodeType"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Protected route need to include sign in token as authorization bearer",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Protected route need to include sign in token as authorization bearer"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/contents": {
+            "get": {
+                "tags": [
+                    "Content"
+                ],
+                "summary": "Get all content",
+                "description": "This request is used to get all content when user use the App. This request is using MySql database.",
+                "operationId": "c5c38aa7abec63aea79f4637d35a5103",
+                "responses": {
+                    "200": {
+                        "description": "Content fetched",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Get List Success"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/Content"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Protected route need to include sign in token as authorization bearer",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Protected route need to include sign in token as authorization bearer"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/contents/types": {
+            "get": {
+                "tags": [
+                    "ContentType"
+                ],
+                "summary": "Get all content type",
+                "description": "This request is used to get all content type when user use the App. This request is using MySql database.",
+                "operationId": "020a2d56593aa1201300f0885aba6fe4",
+                "responses": {
+                    "200": {
+                        "description": "Content type fetched",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Get List Success"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/ContentType"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Protected route need to include sign in token as authorization bearer",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Protected route need to include sign in token as authorization bearer"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/parameters": {
+            "get": {
+                "tags": [
+                    "Parameter"
+                ],
+                "summary": "Get all parameter",
+                "description": "This request is used to get all parameter when user use the App. This request is using MySql database.",
+                "operationId": "e340093dfc44a1bb4a27a65e88ad7e01",
+                "responses": {
+                    "200": {
+                        "description": "Parameter fetched",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Get List Success"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/Parameter"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Protected route need to include sign in token as authorization bearer",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Protected route need to include sign in token as authorization bearer"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/posts": {
+            "get": {
+                "tags": [
+                    "Post"
+                ],
+                "summary": "Get all post",
+                "description": "This request is used to get all post when user use the App. This request is using MySql database.",
+                "operationId": "e32d1532d25822a1774c86a674aeac0b",
+                "responses": {
+                    "200": {
+                        "description": "Post fetched",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Get List Success"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/Post"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Protected route need to include sign in token as authorization bearer",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Protected route need to include sign in token as authorization bearer"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/posts/types": {
+            "get": {
+                "tags": [
+                    "PostType"
+                ],
+                "summary": "Get all post type",
+                "description": "This request is used to get all post type when user use the App. This request is using MySql database.",
+                "operationId": "8112183090a7c26d48189489ffe510a3",
+                "responses": {
+                    "200": {
+                        "description": "Post type fetched",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Get List Success"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/PostType"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Protected route need to include sign in token as authorization bearer",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Protected route need to include sign in token as authorization bearer"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/users": {
+            "get": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Get all user",
+                "description": "This request is used to get all user when user use the App. This request is using MySql database.",
+                "operationId": "40788a437520208c976f9ad882d9f74e",
+                "responses": {
+                    "200": {
+                        "description": "User fetched",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Get List Success"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/User"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Protected route need to include sign in token as authorization bearer",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Protected route need to include sign in token as authorization bearer"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/api/users/roles": {
+            "get": {
+                "tags": [
+                    "UserRole"
+                ],
+                "summary": "Get all user role",
+                "description": "This request is used to get all user role when user use the App. This request is using MySql database.",
+                "operationId": "4be04257887c06c87c963991dae9c2ef",
+                "responses": {
+                    "200": {
+                        "description": "User role fetched",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Get List Success"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/UserRole"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Protected route need to include sign in token as authorization bearer",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Protected route need to include sign in token as authorization bearer"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "AddressDistrict": {
+                "required": [
+                    "id",
+                    "isDisable",
+                    "createdAt",
+                    "updatedAt",
+                    "name",
+                    "code",
+                    "description",
+                    "provinceCode"
+                ],
+                "properties": {
+                    "id": {
+                        "description": "Primary Key",
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "isDisable": {
+                        "description": "Indicates if the code is marked as a disable",
+                        "type": "boolean"
+                    },
+                    "createdAt": {
+                        "description": "Timestamp when the admin was created",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updatedAt": {
+                        "description": "Timestamp when the admin was updated",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "name": {
+                        "description": "Name of the district",
+                        "type": "string"
+                    },
+                    "code": {
+                        "description": "Code of the district",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Description of the district",
+                        "type": "string"
+                    },
+                    "provinceCode": {
+                        "description": "Code of the province",
+                        "type": "string"
+                    },
+                    "province": {
+                        "$ref": "#/components/schemas/AddressProvince"
+                    },
+                    "wards": {
+                        "description": "Wards of the address",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/AddressWard"
+                        }
+                    }
+                },
+                "type": "object"
+            },
+            "AddressProvince": {
+                "required": [
+                    "id",
+                    "isDisable",
+                    "createdAt",
+                    "updatedAt",
+                    "name",
+                    "code",
+                    "description"
+                ],
+                "properties": {
+                    "id": {
+                        "description": "Primary Key",
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "isDisable": {
+                        "description": "Indicates if the code is marked as a disable",
+                        "type": "boolean"
+                    },
+                    "createdAt": {
+                        "description": "Timestamp when the admin was created",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updatedAt": {
+                        "description": "Timestamp when the admin was updated",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "name": {
+                        "description": "Name of the province",
+                        "type": "string"
+                    },
+                    "code": {
+                        "description": "Code of the province",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Description of the province",
+                        "type": "string"
+                    },
+                    "districts": {
+                        "description": "Districts of the address",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/AddressDistrict"
+                        }
+                    }
+                },
+                "type": "object"
+            },
+            "Address": {
+                "required": [
+                    "id",
+                    "isDisable",
+                    "createdAt",
+                    "updatedAt",
+                    "address",
+                    "provinceCode",
+                    "districtCode",
+                    "wardCode"
+                ],
+                "properties": {
+                    "id": {
+                        "description": "Primary Key",
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "isDisable": {
+                        "description": "Indicates if the code is marked as a disable",
+                        "type": "boolean"
+                    },
+                    "createdAt": {
+                        "description": "Timestamp when the admin was created",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updatedAt": {
+                        "description": "Timestamp when the admin was updated",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "address": {
+                        "description": "Address specifically",
+                        "type": "string"
+                    },
+                    "provinceCode": {
+                        "description": "Code of the province",
+                        "type": "string"
+                    },
+                    "province": {
+                        "$ref": "#/components/schemas/AddressProvince"
+                    },
+                    "districtCode": {
+                        "description": "Code of the districts",
+                        "type": "string"
+                    },
+                    "district": {
+                        "$ref": "#/components/schemas/AddressDistrict"
+                    },
+                    "wardCode": {
+                        "description": "Code of the ward",
+                        "type": "string"
+                    },
+                    "ward": {
+                        "$ref": "#/components/schemas/AddressWard"
+                    }
+                },
+                "type": "object"
+            },
+            "AddressWard": {
+                "required": [
+                    "id",
+                    "isDisable",
+                    "createdAt",
+                    "updatedAt",
+                    "name",
+                    "code",
+                    "description",
+                    "districtCode"
+                ],
+                "properties": {
+                    "id": {
+                        "description": "Primary Key",
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "isDisable": {
+                        "description": "Indicates if the code is marked as a disable",
+                        "type": "boolean"
+                    },
+                    "createdAt": {
+                        "description": "Timestamp when the admin was created",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updatedAt": {
+                        "description": "Timestamp when the admin was updated",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "name": {
+                        "description": "Name of the ward",
+                        "type": "string"
+                    },
+                    "code": {
+                        "description": "Code of the ward",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Description of the ward",
+                        "type": "string"
+                    },
+                    "districtCode": {
+                        "description": "Code of the district",
+                        "type": "string"
+                    },
+                    "district": {
+                        "$ref": "#/components/schemas/AddressDistrict"
+                    }
+                },
+                "type": "object"
+            },
+            "Code": {
+                "required": [
+                    "id",
+                    "isDisable",
+                    "createdAt",
+                    "updatedAt",
+                    "name",
+                    "code",
+                    "description",
+                    "typeCode"
+                ],
+                "properties": {
+                    "id": {
+                        "description": "Primary Key",
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "isDisable": {
+                        "description": "Indicates if the code is marked as a disable",
+                        "type": "boolean"
+                    },
+                    "createdAt": {
+                        "description": "Timestamp when the admin was created",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updatedAt": {
+                        "description": "Timestamp when the admin was updated",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "name": {
+                        "description": "Name of the code",
+                        "type": "string"
+                    },
+                    "code": {
+                        "description": "Code of the code",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Description of the code",
+                        "type": "string"
+                    },
+                    "typeCode": {
+                        "description": "Code of the type",
+                        "type": "string"
+                    },
+                    "type": {
+                        "$ref": "#/components/schemas/CodeType"
+                    }
+                },
+                "type": "object"
+            },
+            "CodeType": {
+                "required": [
+                    "id",
+                    "isDisable",
+                    "createdAt",
+                    "updatedAt",
+                    "name",
+                    "code",
+                    "description"
+                ],
+                "properties": {
+                    "id": {
+                        "description": "Primary Key",
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "isDisable": {
+                        "description": "Indicates if the code is marked as a disable",
+                        "type": "boolean"
+                    },
+                    "createdAt": {
+                        "description": "Timestamp when the admin was created",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updatedAt": {
+                        "description": "Timestamp when the admin was updated",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "name": {
+                        "description": "Name of the type code",
+                        "type": "string"
+                    },
+                    "code": {
+                        "description": "Code of the type code",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Description of the type code",
+                        "type": "string"
+                    },
+                    "codes": {
+                        "description": "List code",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Code"
+                        }
+                    }
+                },
+                "type": "object"
+            },
+            "ContentLanguage": {
+                "required": [
+                    "id",
+                    "isDisable",
+                    "createdAt",
+                    "updatedAt",
+                    "name",
+                    "code",
+                    "description",
+                    "content",
+                    "language"
+                ],
+                "properties": {
+                    "id": {
+                        "description": "Primary Key",
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "isDisable": {
+                        "description": "Indicates if the code is marked as a disable",
+                        "type": "boolean"
+                    },
+                    "createdAt": {
+                        "description": "Timestamp when the admin was created",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updatedAt": {
+                        "description": "Timestamp when the admin was updated",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "name": {
+                        "description": "Name of the content language",
+                        "type": "string"
+                    },
+                    "code": {
+                        "description": "Code of the content language",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Description of the content language",
+                        "type": "string"
+                    },
+                    "content": {
+                        "description": "Content HTML",
+                        "type": "string"
+                    },
+                    "parent": {
+                        "$ref": "#/components/schemas/Content"
+                    },
+                    "language": {
+                        "description": "Language of the content",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "Content": {
+                "required": [
+                    "id",
+                    "isDisable",
+                    "createdAt",
+                    "updatedAt",
+                    "name",
+                    "imageUrl",
+                    "order",
+                    "typeCode"
+                ],
+                "properties": {
+                    "id": {
+                        "description": "Primary Key",
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "isDisable": {
+                        "description": "Indicates if the code is marked as a disable",
+                        "type": "boolean"
+                    },
+                    "createdAt": {
+                        "description": "Timestamp when the admin was created",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updatedAt": {
+                        "description": "Timestamp when the admin was updated",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "name": {
+                        "description": "Name of the content",
+                        "type": "string"
+                    },
+                    "imageUrl": {
+                        "description": "Image url of the content",
+                        "type": "string"
+                    },
+                    "order": {
+                        "description": "Order of the content",
+                        "type": "string"
+                    },
+                    "typeCode": {
+                        "description": "Code of the type",
+                        "type": "string"
+                    },
+                    "type": {
+                        "$ref": "#/components/schemas/ContentType"
+                    },
+                    "languages": {
+                        "description": "Content language",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "ContentType": {
+                "required": [
+                    "id",
+                    "isDisable",
+                    "createdAt",
+                    "updatedAt",
+                    "name",
+                    "code",
+                    "description"
+                ],
+                "properties": {
+                    "id": {
+                        "description": "Primary Key",
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "isDisable": {
+                        "description": "Indicates if the code is marked as a disable",
+                        "type": "boolean"
+                    },
+                    "createdAt": {
+                        "description": "Timestamp when the admin was created",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updatedAt": {
+                        "description": "Timestamp when the admin was updated",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "name": {
+                        "description": "Name of the type content",
+                        "type": "string"
+                    },
+                    "code": {
+                        "description": "Code of the type content",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Description of the type content",
+                        "type": "string"
+                    },
+                    "contents": {
+                        "description": "List contents",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Content"
+                        }
+                    }
+                },
+                "type": "object"
+            },
+            "File": {
+                "required": [
+                    "id",
+                    "createdAt",
+                    "updatedAt",
+                    "isDisable",
+                    "path",
+                    "description"
+                ],
+                "properties": {
+                    "id": {
+                        "description": "Primary Key",
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "createdAt": {
+                        "description": "Timestamp when the admin was created",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updatedAt": {
+                        "description": "Timestamp when the admin was updated",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "isActive": {
+                        "description": "Indicates if the code is marked as a active",
+                        "type": "boolean"
+                    },
+                    "path": {
+                        "description": "Path of the file",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Description of the file",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "Parameter": {
+                "required": [
+                    "id",
+                    "isDisable",
+                    "createdAt",
+                    "updatedAt",
+                    "name",
+                    "code",
+                    "vi",
+                    "en"
+                ],
+                "properties": {
+                    "id": {
+                        "description": "Primary Key",
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "isDisable": {
+                        "description": "Indicates if the code is marked as a disable",
+                        "type": "boolean"
+                    },
+                    "createdAt": {
+                        "description": "Timestamp when the admin was created",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updatedAt": {
+                        "description": "Timestamp when the admin was updated",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "name": {
+                        "description": "Name of the parameter",
+                        "type": "string"
+                    },
+                    "code": {
+                        "description": "Code of the parameter",
+                        "type": "string"
+                    },
+                    "contentVi": {
+                        "description": "Content of the parameter by language vietnamese",
+                        "type": "string"
+                    },
+                    "contentEn": {
+                        "description": "Content of the parameter by language english",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "PostLanguage": {
+                "required": [
+                    "id",
+                    "isDisable",
+                    "createdAt",
+                    "updatedAt",
+                    "name",
+                    "slug",
+                    "description",
+                    "content",
+                    "language"
+                ],
+                "properties": {
+                    "id": {
+                        "description": "Primary Key",
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "isDisable": {
+                        "description": "Indicates if the code is marked as a disable",
+                        "type": "boolean"
+                    },
+                    "createdAt": {
+                        "description": "Timestamp when the admin was created",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updatedAt": {
+                        "description": "Timestamp when the admin was updated",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "name": {
+                        "description": "Name of the post language",
+                        "type": "string"
+                    },
+                    "slug": {
+                        "description": "Slug of the post language",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Description of the post language",
+                        "type": "string"
+                    },
+                    "content": {
+                        "description": "Content HTML",
+                        "type": "string"
+                    },
+                    "post": {
+                        "$ref": "#/components/schemas/Post"
+                    },
+                    "language": {
+                        "description": "Language of the post",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "Post": {
+                "required": [
+                    "id",
+                    "isDisable",
+                    "createdAt",
+                    "updatedAt",
+                    "imageUrl",
+                    "typeCode"
+                ],
+                "properties": {
+                    "id": {
+                        "description": "Primary Key",
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "isDisable": {
+                        "description": "Indicates if the code is marked as a disable",
+                        "type": "boolean"
+                    },
+                    "createdAt": {
+                        "description": "Timestamp when the admin was created",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updatedAt": {
+                        "description": "Timestamp when the admin was updated",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "imageUrl": {
+                        "description": "Image url of the post",
+                        "type": "string"
+                    },
+                    "typeCode": {
+                        "description": "Code of the type",
+                        "type": "string"
+                    },
+                    "type": {
+                        "$ref": "#/components/schemas/PostType"
+                    },
+                    "languages": {
+                        "description": "Post language",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/PostLanguage"
+                        }
+                    }
+                },
+                "type": "object"
+            },
+            "PostType": {
+                "required": [
+                    "id",
+                    "isDisable",
+                    "createdAt",
+                    "updatedAt",
+                    "name",
+                    "code",
+                    "description",
+                    "postTypeId",
+                    "postsCount"
+                ],
+                "properties": {
+                    "id": {
+                        "description": "Primary Key",
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "isDisable": {
+                        "description": "Indicates if the code is marked as a disable",
+                        "type": "boolean"
+                    },
+                    "createdAt": {
+                        "description": "Timestamp when the admin was created",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updatedAt": {
+                        "description": "Timestamp when the admin was updated",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "name": {
+                        "description": "Name of the type post",
+                        "type": "string"
+                    },
+                    "code": {
+                        "description": "Code of the type post",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Description of the type post",
+                        "type": "string"
+                    },
+                    "posts": {
+                        "description": "List posts",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Post"
+                        }
+                    },
+                    "postTypeId": {
+                        "description": "Children post",
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "children": {
+                        "description": "Children post",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/PostType"
+                        }
+                    },
+                    "postsCount": {
+                        "description": "Count post",
+                        "type": "number"
+                    }
+                },
+                "type": "object"
+            },
+            "User": {
+                "required": [
+                    "id",
+                    "isDisable",
+                    "createdAt",
+                    "updatedAt",
+                    "name",
+                    "email",
+                    "avatar_url",
+                    "birthday",
+                    "phoneNumber",
+                    "description",
+                    "roleCode",
+                    "positionCode"
+                ],
+                "properties": {
+                    "id": {
+                        "description": "Primary Key",
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "isDisable": {
+                        "description": "Indicates if the code is marked as a disable",
+                        "type": "boolean"
+                    },
+                    "createdAt": {
+                        "description": "Timestamp when the admin was created",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updatedAt": {
+                        "description": "Timestamp when the admin was updated",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "name": {
+                        "description": "Name of the user",
+                        "type": "string"
+                    },
+                    "email": {
+                        "description": "Email of the user",
+                        "type": "string"
+                    },
+                    "avatarUrl": {
+                        "description": "Url avatar of the user",
+                        "type": "string"
+                    },
+                    "birthday": {
+                        "description": "Birthday of the user",
+                        "type": "string"
+                    },
+                    "phoneNumber": {
+                        "description": "Phone number of the user",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Description of the user",
+                        "type": "string"
+                    },
+                    "roleCode": {
+                        "description": "code of the role user",
+                        "type": "string"
+                    },
+                    "role": {
+                        "$ref": "#/components/schemas/UserRole"
+                    },
+                    "positionCode": {
+                        "description": "Code of the position user",
+                        "type": "string"
+                    },
+                    "position": {
+                        "$ref": "#/components/schemas/Code"
+                    }
+                },
+                "type": "object"
+            },
+            "UserRole": {
+                "required": [
+                    "id",
+                    "isDisable",
+                    "createdAt",
+                    "updatedAt",
+                    "name",
+                    "code",
+                    "description",
+                    "typeCode"
+                ],
+                "properties": {
+                    "id": {
+                        "description": "Primary Key",
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "isDisable": {
+                        "description": "Indicates if the code is marked as a disable",
+                        "type": "boolean"
+                    },
+                    "createdAt": {
+                        "description": "Timestamp when the admin was created",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updatedAt": {
+                        "description": "Timestamp when the admin was updated",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "name": {
+                        "description": "Name of the role user",
+                        "type": "string"
+                    },
+                    "code": {
+                        "description": "Code of the role user",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Description of the role user",
+                        "type": "string"
+                    },
+                    "permissions": {
+                        "description": "permissions of the role user",
+                        "type": "string"
+                    },
+                    "users": {
+                        "description": "Type of the code",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/User"
+                        }
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "description": "JWT Authorization header using the Bearer scheme.",
+                "bearerFormat": "JWT",
+                "scheme": "bearer"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Address",
+            "description": "Operations about address"
+        },
+        {
+            "name": "AddressProvince",
+            "description": "Operations about address province"
+        },
+        {
+            "name": "AddressDistrict",
+            "description": "Operations about address district"
+        },
+        {
+            "name": "AddressWard",
+            "description": "Operations about address ward"
+        },
+        {
+            "name": "Code",
+            "description": "Operations about code"
+        },
+        {
+            "name": "CodeType",
+            "description": "Operations about code type"
+        },
+        {
+            "name": "Content",
+            "description": "Operations about content"
+        },
+        {
+            "name": "ContentType",
+            "description": "Operations about content type"
+        },
+        {
+            "name": "Parameter",
+            "description": "Operations about parameter"
+        },
+        {
+            "name": "Post",
+            "description": "Operations about post"
+        },
+        {
+            "name": "PostType",
+            "description": "Operations about post type"
+        },
+        {
+            "name": "User",
+            "description": "Operations about user"
+        },
+        {
+            "name": "UserRole",
+            "description": "Operations about user role"
+        }
+    ]
+}

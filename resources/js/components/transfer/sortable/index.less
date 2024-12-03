@@ -1,0 +1,74 @@
+@keyframes pop {
+  0% {
+    @apply scale-100;
+    box-shadow: @box-shadow;
+  }
+  100% {
+    @apply scale-105;
+    box-shadow: @box-shadow-up;
+  }
+}
+@box-shadow-border: 0 0 0 calc(1px / var(--scale-x, 1)) oklab(var(--bc) / 0.05);
+@box-shadow-common: 0 1px calc(4px / var(--scale-x, 1)) 0 oklab(var(--bc) / 0.15);
+@box-shadow: @box-shadow-border, @box-shadow-common;
+@box-shadow-up:
+  @box-shadow-border,
+  -1px 0 15px 0 oklab(var(--bc) / 0.01),
+  0px 15px 15px 0 oklab(var(--bc) / 0.25);
+
+.c-sortable {
+  @apply box-border flex touch-manipulation;
+  transform: translate3d(var(--translate-x, 0), var(--translate-y, 0), 0) scaleX(var(--scale-x, 1))
+    scaleY(var(--scale-y, 1));
+
+  > .item {
+    @apply relative box-border flex flex-grow origin-center list-none items-center justify-between whitespace-nowrap bg-base-100 px-2 py-1 text-base-content outline-none;
+    transition: box-shadow 200ms cubic-bezier(0.18, 0.67, 0.6, 1.22);
+    -webkit-tap-highlight-color: transparent;
+    transform: scale(var(--scale, 1));
+
+    &:focus-visible {
+      box-shadow:
+        0 0px 4px 1px var(--p),
+        @box-shadow;
+    }
+
+    &:not(.withHandle) {
+      @apply cursor-grab touch-manipulation;
+    }
+
+    &.disabled {
+      @apply cursor-not-allowed bg-base-300;
+
+      &:focus {
+        box-shadow:
+          0 0px 4px 1px oklab(var(--bc) / 0.1),
+          @box-shadow;
+      }
+    }
+
+    &.dragging:not(.drag-overlay) {
+      @apply z-0 opacity-50;
+
+      &:focus {
+        box-shadow: @box-shadow;
+      }
+    }
+    &.drag-overlay {
+      @apply opacity-100;
+      animation: pop 200ms cubic-bezier(0.18, 0.67, 0.6, 1.22);
+      transform: scale(var(--scale, 1));
+      box-shadow: @box-shadow-up;
+    }
+
+    &.active {
+      @apply bg-primary text-white;
+    }
+    .action {
+      @apply opacity-0 transition-opacity duration-150 ease-in-out;
+    }
+    &:hover .action {
+      @apply opacity-100;
+    }
+  }
+}

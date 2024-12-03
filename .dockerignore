@@ -1,0 +1,8 @@
+/.idea
+/.vscode
+/vendor
+/node_modules
+/.e2e/result
+/public/hot
+/public/build
+composer.lock

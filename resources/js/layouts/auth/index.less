@@ -1,0 +1,39 @@
+/**
+ * This is the documentation comment for the .l-login class.
+ * It is defined in the file.
+ */
+.l-login {
+  @apply relative block h-screen w-screen justify-between bg-cover bg-right-top bg-no-repeat lg:flex;
+  background-image: url('/assets/images/login-base.svg');
+
+  > .wrapper {
+    @apply absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-md bg-base-200;
+    > .t-head {
+      @apply w-96 bg-base-300/30 bg-no-repeat p-10;
+      min-height: 424px;
+      background-size: 70%;
+      background-position: center bottom;
+      background-image: url('/assets/images/login.svg');
+    }
+    > .content {
+      @apply w-full p-8;
+    }
+  }
+  h1 {
+    @apply mb-4 text-2xl font-bold leading-8 md:text-3xl md:leading-10;
+  }
+  h5 {
+    @apply mb-8;
+  }
+
+  .block-grap-1 {
+    @apply flex items-center gap-1 pb-2;
+  }
+
+  .ant-input {
+    @apply h-10;
+  }
+  .c-otp .input {
+    @apply size-10;
+  }
+}

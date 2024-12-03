@@ -1,0 +1,3 @@
+robotframework==7.0.1
+robotframework-browser>=18.9.1
+robotframework-faker>=5.0.0

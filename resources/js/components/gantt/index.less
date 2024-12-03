@@ -1,0 +1,51 @@
+.c-gantt {
+  .ant-input {
+    @apply rounded-none border-none bg-base-200 p-0 !text-center;
+  }
+  .weekend,
+  .weekend .ant-input {
+    @apply !bg-base-200;
+  }
+
+  .border-table {
+    thead tr {
+      &:first-child th {
+        @apply border-t;
+
+        &:first-child {
+          @apply rounded-tl-lg;
+        }
+        &:last-child {
+          @apply rounded-tr-lg;
+        }
+      }
+      &:not(:first-child) th {
+        @apply font-normal;
+      }
+
+      th {
+        @apply justify-center border-b border-r text-xs;
+        padding-top: 1px;
+        padding-bottom: 0;
+
+        &:first-child {
+          @apply border-l;
+        }
+
+        button {
+          @apply justify-center capitalize;
+        }
+      }
+    }
+    tbody tr td {
+      @apply border-r border-base-300 p-0;
+
+      &:first-child {
+        @apply border-l;
+      }
+      > div {
+        @apply p-0;
+      }
+    }
+  }
+}

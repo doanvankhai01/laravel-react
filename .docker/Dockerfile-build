@@ -1,0 +1,33 @@
+#FROM bitnami/node:20 as build-client
+#WORKDIR /app
+#COPY .. .
+#COPY --chown=root:root ../.env.example ./.env
+#ENV VITE_URL_API=/api
+#RUN npm install -f && \
+#npm run build
+
+FROM ubuntu:latest
+
+RUN apt-get update -y
+RUN apt-get install supervisor nodejs npm php php-curl curl php-mysql php-sqlite3 libapache2-mod-php php-mbstring php-xmlrpc php-soap php-gd php-xml php-cli php-zip php-bcmath php-tokenizer php-json php-pear -y
+RUN apt-get install redis php-redis -y
+RUN curl -sS https://getcomposer.org/installer | php -- \
+    --install-dir=/usr/local/bin --filename=composer
+
+WORKDIR /app
+COPY .. .
+#COPY --from=build-client /app/public/build/. ./public/.
+COPY --chown=root:root ../.env.example ./.env
+RUN composer install
+RUN npm install -f && npm run build
+
+ARG PROD=false
+RUN  if [ "$PROD" = "false" ] ; then apt-get update && apt-get install -y python3 python3-pip nodejs npm; fi
+RUN  if [ "$PROD" = "false" ] ; then npx playwright install-deps; fi
+RUN  if [ "$PROD" = "false" ] ; then pip3 install --no-cache --break-system-packages -r ./.e2e/requirements.txt; fi
+RUN  if [ "$PROD" = "false" ] ; then rfbrowser init; fi
+
+CMD php artisan key:generate && php artisan storage:link
+COPY ../.docker/web/supervisord.conf /etc/supervisor/supervisord.conf
+
+CMD ["supervisord", "-n", "-c",  "/etc/supervisor/supervisord.conf"]

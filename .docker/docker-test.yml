@@ -1,0 +1,52 @@
+name: 'laravel-react'
+services:
+  db:
+    image: mariadb:10.8.3
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_DATABASE: laravel-react
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - 3366:3306
+    networks:
+      - my_network
+
+  redis:
+    image: redis:latest
+    ports:
+      - 6379:6379
+    healthcheck:
+      test: ['CMD', 'redis-cli', 'ping']
+      retries: 3
+      timeout: 5s
+    networks:
+      - my_network
+
+  server:
+    build:
+      context: ..
+      dockerfile: .docker/Dockerfile-build
+      args:
+        - PROD=false
+    environment:
+      HOST_ADDRESS: 'http://localhost:3000/administrator'
+      REDIS_HOST: 'cache'
+      BROWSER_TIMEOUT: '4'
+      HEADLESS: 'True'
+      VITE_LANGUAGE: 'en'
+    ports:
+      - 3000:3000
+      - 8080:8080
+    depends_on:
+      - db
+    volumes:
+      - ../output:/app/.e2e/result
+    networks:
+      - my_network
+
+networks:
+  my_network:
+    driver: bridge

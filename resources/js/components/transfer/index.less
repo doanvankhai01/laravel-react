@@ -1,0 +1,19 @@
+.c-transfer {
+  @apply flex flex-col gap-2 pr-9;
+
+  .scrollbar {
+    @apply h-52 rounded-lg border bg-base-100;
+  }
+
+  .group {
+    &-right {
+      @apply absolute -right-9 top-1/2 w-8 -translate-y-1/2 transform text-right;
+    }
+    &-bottom {
+      @apply flex justify-center gap-2;
+    }
+  }
+  .arrow {
+    @apply ~'p-0.5' rounded border border-primary text-primary;
+  }
+}
